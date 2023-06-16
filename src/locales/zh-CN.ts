@@ -26,11 +26,11 @@ export default {
     failed: '操作失败',
     verify: '验证',
     unauthorizedTips: '未经授权，请先进行验证。',
-		stopResponding: '停止响应',
+    stopResponding: '停止响应',
   },
   chat: {
     newChatButton: '新建聊天',
-    placeholder: '来说点什么吧...（Shift + Enter = 换行，"/" 触发提示词）',
+    placeholder: '来说点什么吧...（Shift + Enter = 换行）',
     placeholderMobile: '来说点什么...',
     copy: '复制',
     copied: '复制成功',
