@@ -1,9 +1,8 @@
 <script setup lang='ts'>
 import type { DataTableColumns } from 'naive-ui'
 import { computed, h, ref, watch } from 'vue'
-import { NButton, NCard, NDataTable, NDivider, NInput, NList, NListItem, NModal, NPopconfirm, NSpace, NTabPane, NTabs, NThing, useMessage } from 'naive-ui'
+import { NButton, NDataTable, NInput, NList, NListItem, NModal, NPopconfirm, NSpace, NTabPane, NTabs, NThing, useMessage } from 'naive-ui'
 import PromptRecommend from '../../../assets/recommend.json'
-import { SvgIcon } from '..'
 import { usePromptStore } from '@/store'
 import { useBasicLayout } from '@/hooks/useBasicLayout'
 import { t } from '@/locales'
@@ -392,54 +391,6 @@ const dataSource = computed(() => {
               </template>
             </NListItem>
           </NList>
-        </NTabPane>
-        <NTabPane name="download" :tab="$t('store.online')">
-          <p class="mb-4">
-            {{ $t('store.onlineImportWarning') }}
-          </p>
-          <div class="flex items-center gap-4">
-            <NInput v-model:value="downloadURL" placeholder="" />
-            <NButton
-              strong
-              secondary
-              :disabled="downloadDisabled"
-              :loading="importLoading"
-              @click="downloadPromptTemplate()"
-            >
-              {{ $t('common.download') }}
-            </NButton>
-          </div>
-          <NDivider />
-          <div class="max-h-[360px] overflow-y-auto space-y-4">
-            <NCard
-              v-for="info in promptRecommendList"
-              :key="info.key" :title="info.key"
-              :bordered="true"
-              embedded
-            >
-              <p
-                class="overflow-hidden text-ellipsis whitespace-nowrap"
-                :title="info.desc"
-              >
-                {{ info.desc }}
-              </p>
-              <template #footer>
-                <div class="flex items-center justify-end space-x-4">
-                  <NButton text>
-                    <a
-                      :href="info.url"
-                      target="_blank"
-                    >
-                      <SvgIcon class="text-xl" icon="ri:link" />
-                    </a>
-                  </NButton>
-                  <NButton text @click="setDownloadURL(info.downloadUrl) ">
-                    <SvgIcon class="text-xl" icon="ri:add-fill" />
-                  </NButton>
-                </div>
-              </template>
-            </NCard>
-          </div>
         </NTabPane>
       </NTabs>
     </div>

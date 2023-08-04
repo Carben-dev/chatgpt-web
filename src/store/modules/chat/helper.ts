@@ -3,7 +3,7 @@ import { ss } from '@/utils/storage'
 const LOCAL_NAME = 'chatStorage'
 
 export function defaultState(): Chat.ChatState {
-  const uuid = 1
+  const uuid = Date.now()
   return {
     active: uuid,
     usingContext: true,

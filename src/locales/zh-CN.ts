@@ -30,7 +30,7 @@ export default {
   },
   chat: {
     newChatButton: '新建聊天',
-    placeholder: '来说点什么吧...',
+    placeholder: '来说点什么吧... ("/" 触发提示词）',
     placeholderMobile: '来说点什么...',
     copy: '复制',
     copied: '复制成功',
